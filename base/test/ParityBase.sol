@@ -30,8 +30,8 @@ abstract contract ParityBase is Test {
         address trader = makeAddr("trader");
         address taker = makeAddr("taker");
         PledgeDeskBase pd = new PledgeDeskBase(arbiter, H);
-        vm.trade(trader, 100 ether);
-        vm.trade(taker, 100 ether);
+        vm.deal(trader, 100 ether);
+        vm.deal(taker, 100 ether);
 
         vm.prank(trader);
         pd.registerTrader{value: 50 * U}("parity_desk");

@@ -17,9 +17,9 @@ contract PledgeDeskBaseTest is Test {
     function setUp() public {
         vm.prank(owner);
         pd = new PledgeDeskBase(arbiter, H);
-        vm.trade(trader, 10 ether);
-        vm.trade(taker, 10 ether);
-        vm.trade(stranger, 10 ether);
+        vm.deal(trader, 10 ether);
+        vm.deal(taker, 10 ether);
+        vm.deal(stranger, 10 ether);
     }
 
     function _register(uint256 bond) internal {
@@ -378,7 +378,7 @@ contract PledgeDeskBaseTest is Test {
         _register(50 * U);
         for (uint256 k = 0; k < 5; k++) {
             address b = makeAddr(string(abi.encodePacked("taker", vm.toString(k))));
-            vm.trade(b, 10 ether);
+            vm.deal(b, 10 ether);
             vm.prank(trader);
             uint256 id = pd.createTrade("Red handbag", "40 USD", "", 2 * U, 5);
             vm.prank(b);
@@ -563,7 +563,7 @@ contract PledgeDeskBaseTest is Test {
         _register(50 * U);
         for (uint256 k = 0; k < 6; k++) {
             address b = makeAddr(string(abi.encodePacked("rep", vm.toString(k % 2))));
-            vm.trade(b, 100 ether);
+            vm.deal(b, 100 ether);
             vm.prank(trader);
             uint256 id = pd.createTrade("Red handbag", "40 USD", "", 2 * U, 5);
             vm.prank(b);
