@@ -1,0 +1,2289 @@
+{
+ "micro_units_per_unit": 1000000,
+ "scenarios": [
+  {
+   "id": "p1_confirmed_taker_wins_rev",
+   "protect": 1,
+   "silent": false,
+   "steps": [
+    [
+     "r",
+     "TAKER_WINS",
+     true
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "TAKER_WINS",
+    "compensation": 1000000,
+    "fee": 50000,
+    "taker_claimable": 3000000,
+    "trader_claimable": 0,
+    "treasury": 50000,
+    "trader_bond": 48950000,
+    "trader_locked": 0,
+    "lost": 1,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p1_confirmed_taker_wins_norev",
+   "protect": 1,
+   "silent": false,
+   "steps": [
+    [
+     "r",
+     "TAKER_WINS",
+     false
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "TAKER_WINS",
+    "compensation": 1000000,
+    "fee": 50000,
+    "taker_claimable": 3000000,
+    "trader_claimable": 0,
+    "treasury": 50000,
+    "trader_bond": 48950000,
+    "trader_locked": 0,
+    "lost": 1,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p1_confirmed_split_rev",
+   "protect": 1,
+   "silent": false,
+   "steps": [
+    [
+     "r",
+     "SPLIT",
+     true
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "SPLIT",
+    "compensation": 500000,
+    "fee": 25000,
+    "taker_claimable": 2500000,
+    "trader_claimable": 0,
+    "treasury": 25000,
+    "trader_bond": 49475000,
+    "trader_locked": 0,
+    "lost": 0,
+    "split": 1,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p1_confirmed_split_norev",
+   "protect": 1,
+   "silent": false,
+   "steps": [
+    [
+     "r",
+     "SPLIT",
+     false
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "SPLIT",
+    "compensation": 500000,
+    "fee": 25000,
+    "taker_claimable": 2500000,
+    "trader_claimable": 0,
+    "treasury": 25000,
+    "trader_bond": 49475000,
+    "trader_locked": 0,
+    "lost": 0,
+    "split": 1,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p1_confirmed_trader_wins_rev",
+   "protect": 1,
+   "silent": false,
+   "steps": [
+    [
+     "r",
+     "TRADER_WINS",
+     true
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "TRADER_WINS",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 0,
+    "trader_claimable": 2000000,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 0,
+    "lost": 0,
+    "split": 0,
+    "won": 1,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p1_confirmed_trader_wins_norev",
+   "protect": 1,
+   "silent": false,
+   "steps": [
+    [
+     "r",
+     "TRADER_WINS",
+     false
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "TRADER_WINS",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 0,
+    "trader_claimable": 2000000,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 0,
+    "lost": 0,
+    "split": 0,
+    "won": 1,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p1_confirmed_insufficient_evidence_norev",
+   "protect": 1,
+   "silent": false,
+   "steps": [
+    [
+     "r",
+     "INSUFFICIENT_EVIDENCE",
+     false
+    ]
+   ],
+   "expect": {
+    "status": "REOPENED",
+    "verdict": "INSUFFICIENT_EVIDENCE",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 0,
+    "trader_claimable": 0,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 1500000,
+    "lost": 0,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p1_confirmed_insufficient_evidence_rev",
+   "protect": 1,
+   "silent": false,
+   "steps": [
+    [
+     "r",
+     "INSUFFICIENT_EVIDENCE",
+     true
+    ]
+   ],
+   "expect": {
+    "status": "REOPENED",
+    "verdict": "INSUFFICIENT_EVIDENCE",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 0,
+    "trader_claimable": 0,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 1500000,
+    "lost": 0,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p1_confirmed_insufficient_evidence_norev_then_taker_wins_rev",
+   "protect": 1,
+   "silent": false,
+   "steps": [
+    [
+     "r",
+     "INSUFFICIENT_EVIDENCE",
+     false
+    ],
+    [
+     "r",
+     "TAKER_WINS",
+     true
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "TAKER_WINS",
+    "compensation": 1000000,
+    "fee": 50000,
+    "taker_claimable": 3000000,
+    "trader_claimable": 0,
+    "treasury": 50000,
+    "trader_bond": 48950000,
+    "trader_locked": 0,
+    "lost": 1,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p1_confirmed_insufficient_evidence_norev_then_split_rev",
+   "protect": 1,
+   "silent": false,
+   "steps": [
+    [
+     "r",
+     "INSUFFICIENT_EVIDENCE",
+     false
+    ],
+    [
+     "r",
+     "SPLIT",
+     true
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "SPLIT",
+    "compensation": 500000,
+    "fee": 25000,
+    "taker_claimable": 2500000,
+    "trader_claimable": 0,
+    "treasury": 25000,
+    "trader_bond": 49475000,
+    "trader_locked": 0,
+    "lost": 0,
+    "split": 1,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p1_confirmed_insufficient_evidence_norev_then_trader_wins_norev",
+   "protect": 1,
+   "silent": false,
+   "steps": [
+    [
+     "r",
+     "INSUFFICIENT_EVIDENCE",
+     false
+    ],
+    [
+     "r",
+     "TRADER_WINS",
+     false
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "TRADER_WINS",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 0,
+    "trader_claimable": 2000000,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 0,
+    "lost": 0,
+    "split": 0,
+    "won": 1,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p1_confirmed_insufficient_evidence_norev_then_insufficient_evidence_norev",
+   "protect": 1,
+   "silent": false,
+   "steps": [
+    [
+     "r",
+     "INSUFFICIENT_EVIDENCE",
+     false
+    ],
+    [
+     "r",
+     "INSUFFICIENT_EVIDENCE",
+     false
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "INSUFFICIENT_EVIDENCE",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 2000000,
+    "trader_claimable": 0,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 0,
+    "lost": 0,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 1
+   }
+  },
+  {
+   "id": "p1_silent_taker_wins_rev",
+   "protect": 1,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "TAKER_WINS",
+     true
+    ]
+   ],
+   "expect": {
+    "status": "PAYOUT_PENDING",
+    "verdict": "TAKER_WINS",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 0,
+    "trader_claimable": 0,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 1500000,
+    "lost": 0,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p1_silent_taker_wins_norev",
+   "protect": 1,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "TAKER_WINS",
+     false
+    ]
+   ],
+   "divergent": true,
+   "expect_genlayer": {
+    "status": "REOPENED",
+    "verdict": "INSUFFICIENT_EVIDENCE",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 0,
+    "trader_claimable": 0,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 1500000,
+    "lost": 0,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 0
+   },
+   "expect_base": {
+    "status": "DISPUTED",
+    "verdict": "",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 0,
+    "trader_claimable": 0,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 1500000,
+    "lost": 0,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 0
+   },
+   "base_reverts": true
+  },
+  {
+   "id": "p1_silent_split_rev",
+   "protect": 1,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "SPLIT",
+     true
+    ]
+   ],
+   "expect": {
+    "status": "PAYOUT_PENDING",
+    "verdict": "SPLIT",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 0,
+    "trader_claimable": 0,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 1500000,
+    "lost": 0,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p1_silent_split_norev",
+   "protect": 1,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "SPLIT",
+     false
+    ]
+   ],
+   "divergent": true,
+   "expect_genlayer": {
+    "status": "REOPENED",
+    "verdict": "INSUFFICIENT_EVIDENCE",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 0,
+    "trader_claimable": 0,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 1500000,
+    "lost": 0,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 0
+   },
+   "expect_base": {
+    "status": "DISPUTED",
+    "verdict": "",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 0,
+    "trader_claimable": 0,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 1500000,
+    "lost": 0,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 0
+   },
+   "base_reverts": true
+  },
+  {
+   "id": "p1_silent_trader_wins_rev",
+   "protect": 1,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "TRADER_WINS",
+     true
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "TRADER_WINS",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 0,
+    "trader_claimable": 2000000,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 0,
+    "lost": 0,
+    "split": 0,
+    "won": 1,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p1_silent_trader_wins_norev",
+   "protect": 1,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "TRADER_WINS",
+     false
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "TRADER_WINS",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 0,
+    "trader_claimable": 2000000,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 0,
+    "lost": 0,
+    "split": 0,
+    "won": 1,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p1_silent_insufficient_evidence_norev",
+   "protect": 1,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "INSUFFICIENT_EVIDENCE",
+     false
+    ]
+   ],
+   "expect": {
+    "status": "REOPENED",
+    "verdict": "INSUFFICIENT_EVIDENCE",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 0,
+    "trader_claimable": 0,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 1500000,
+    "lost": 0,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p1_silent_insufficient_evidence_rev",
+   "protect": 1,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "INSUFFICIENT_EVIDENCE",
+     true
+    ]
+   ],
+   "expect": {
+    "status": "REOPENED",
+    "verdict": "INSUFFICIENT_EVIDENCE",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 0,
+    "trader_claimable": 0,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 1500000,
+    "lost": 0,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p1_silent_insufficient_evidence_norev_then_taker_wins_rev",
+   "protect": 1,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "INSUFFICIENT_EVIDENCE",
+     false
+    ],
+    [
+     "r",
+     "TAKER_WINS",
+     true
+    ]
+   ],
+   "expect": {
+    "status": "PAYOUT_PENDING",
+    "verdict": "TAKER_WINS",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 0,
+    "trader_claimable": 0,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 1500000,
+    "lost": 0,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p1_silent_insufficient_evidence_norev_then_split_rev",
+   "protect": 1,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "INSUFFICIENT_EVIDENCE",
+     false
+    ],
+    [
+     "r",
+     "SPLIT",
+     true
+    ]
+   ],
+   "expect": {
+    "status": "PAYOUT_PENDING",
+    "verdict": "SPLIT",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 0,
+    "trader_claimable": 0,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 1500000,
+    "lost": 0,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p1_silent_insufficient_evidence_norev_then_trader_wins_norev",
+   "protect": 1,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "INSUFFICIENT_EVIDENCE",
+     false
+    ],
+    [
+     "r",
+     "TRADER_WINS",
+     false
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "TRADER_WINS",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 0,
+    "trader_claimable": 2000000,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 0,
+    "lost": 0,
+    "split": 0,
+    "won": 1,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p1_silent_insufficient_evidence_norev_then_insufficient_evidence_norev",
+   "protect": 1,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "INSUFFICIENT_EVIDENCE",
+     false
+    ],
+    [
+     "r",
+     "INSUFFICIENT_EVIDENCE",
+     false
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "INSUFFICIENT_EVIDENCE",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 2000000,
+    "trader_claimable": 0,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 0,
+    "lost": 0,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 1
+   }
+  },
+  {
+   "id": "p1_silent_taker_wins_rev_then_finalize",
+   "protect": 1,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "TAKER_WINS",
+     true
+    ],
+    [
+     "f"
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "TAKER_WINS",
+    "compensation": 250000,
+    "fee": 12500,
+    "taker_claimable": 2250000,
+    "trader_claimable": 0,
+    "treasury": 12500,
+    "trader_bond": 49737500,
+    "trader_locked": 0,
+    "lost": 1,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p1_silent_taker_wins_rev_then_challenge_then_trader_wins_norev",
+   "protect": 1,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "TAKER_WINS",
+     true
+    ],
+    [
+     "c"
+    ],
+    [
+     "r",
+     "TRADER_WINS",
+     false
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "TRADER_WINS",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 0,
+    "trader_claimable": 2000000,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 0,
+    "lost": 0,
+    "split": 0,
+    "won": 1,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p1_silent_taker_wins_rev_then_challenge_then_taker_wins_rev",
+   "protect": 1,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "TAKER_WINS",
+     true
+    ],
+    [
+     "c"
+    ],
+    [
+     "r",
+     "TAKER_WINS",
+     true
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "TAKER_WINS",
+    "compensation": 250000,
+    "fee": 12500,
+    "taker_claimable": 2250000,
+    "trader_claimable": 0,
+    "treasury": 12500,
+    "trader_bond": 49737500,
+    "trader_locked": 0,
+    "lost": 1,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p1_silent_taker_wins_rev_then_challenge_then_insufficient_evidence_norev",
+   "protect": 1,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "TAKER_WINS",
+     true
+    ],
+    [
+     "c"
+    ],
+    [
+     "r",
+     "INSUFFICIENT_EVIDENCE",
+     false
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "INSUFFICIENT_EVIDENCE",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 2000000,
+    "trader_claimable": 0,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 0,
+    "lost": 0,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 1
+   }
+  },
+  {
+   "id": "p1_silent_insufficient_evidence_norev_then_taker_wins_rev_then_finalize",
+   "protect": 1,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "INSUFFICIENT_EVIDENCE",
+     false
+    ],
+    [
+     "r",
+     "TAKER_WINS",
+     true
+    ],
+    [
+     "f"
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "TAKER_WINS",
+    "compensation": 250000,
+    "fee": 12500,
+    "taker_claimable": 2250000,
+    "trader_claimable": 0,
+    "treasury": 12500,
+    "trader_bond": 49737500,
+    "trader_locked": 0,
+    "lost": 1,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p1_silent_insufficient_evidence_norev_then_taker_wins_rev_then_challenge_then_taker_wins_rev",
+   "protect": 1,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "INSUFFICIENT_EVIDENCE",
+     false
+    ],
+    [
+     "r",
+     "TAKER_WINS",
+     true
+    ],
+    [
+     "c"
+    ],
+    [
+     "r",
+     "TAKER_WINS",
+     true
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "TAKER_WINS",
+    "compensation": 250000,
+    "fee": 12500,
+    "taker_claimable": 2250000,
+    "trader_claimable": 0,
+    "treasury": 12500,
+    "trader_bond": 49737500,
+    "trader_locked": 0,
+    "lost": 1,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p1_silent_split_rev_then_finalize",
+   "protect": 1,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "SPLIT",
+     true
+    ],
+    [
+     "f"
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "SPLIT",
+    "compensation": 250000,
+    "fee": 12500,
+    "taker_claimable": 2250000,
+    "trader_claimable": 0,
+    "treasury": 12500,
+    "trader_bond": 49737500,
+    "trader_locked": 0,
+    "lost": 0,
+    "split": 1,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p1_silent_split_rev_then_challenge_then_trader_wins_norev",
+   "protect": 1,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "SPLIT",
+     true
+    ],
+    [
+     "c"
+    ],
+    [
+     "r",
+     "TRADER_WINS",
+     false
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "TRADER_WINS",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 0,
+    "trader_claimable": 2000000,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 0,
+    "lost": 0,
+    "split": 0,
+    "won": 1,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p1_silent_split_rev_then_challenge_then_split_rev",
+   "protect": 1,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "SPLIT",
+     true
+    ],
+    [
+     "c"
+    ],
+    [
+     "r",
+     "SPLIT",
+     true
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "SPLIT",
+    "compensation": 250000,
+    "fee": 12500,
+    "taker_claimable": 2250000,
+    "trader_claimable": 0,
+    "treasury": 12500,
+    "trader_bond": 49737500,
+    "trader_locked": 0,
+    "lost": 0,
+    "split": 1,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p1_silent_split_rev_then_challenge_then_insufficient_evidence_norev",
+   "protect": 1,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "SPLIT",
+     true
+    ],
+    [
+     "c"
+    ],
+    [
+     "r",
+     "INSUFFICIENT_EVIDENCE",
+     false
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "INSUFFICIENT_EVIDENCE",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 2000000,
+    "trader_claimable": 0,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 0,
+    "lost": 0,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 1
+   }
+  },
+  {
+   "id": "p1_silent_insufficient_evidence_norev_then_split_rev_then_finalize",
+   "protect": 1,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "INSUFFICIENT_EVIDENCE",
+     false
+    ],
+    [
+     "r",
+     "SPLIT",
+     true
+    ],
+    [
+     "f"
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "SPLIT",
+    "compensation": 250000,
+    "fee": 12500,
+    "taker_claimable": 2250000,
+    "trader_claimable": 0,
+    "treasury": 12500,
+    "trader_bond": 49737500,
+    "trader_locked": 0,
+    "lost": 0,
+    "split": 1,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p1_silent_insufficient_evidence_norev_then_split_rev_then_challenge_then_split_rev",
+   "protect": 1,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "INSUFFICIENT_EVIDENCE",
+     false
+    ],
+    [
+     "r",
+     "SPLIT",
+     true
+    ],
+    [
+     "c"
+    ],
+    [
+     "r",
+     "SPLIT",
+     true
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "SPLIT",
+    "compensation": 250000,
+    "fee": 12500,
+    "taker_claimable": 2250000,
+    "trader_claimable": 0,
+    "treasury": 12500,
+    "trader_bond": 49737500,
+    "trader_locked": 0,
+    "lost": 0,
+    "split": 1,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p10_confirmed_taker_wins_rev",
+   "protect": 10,
+   "silent": false,
+   "steps": [
+    [
+     "r",
+     "TAKER_WINS",
+     true
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "TAKER_WINS",
+    "compensation": 10000000,
+    "fee": 500000,
+    "taker_claimable": 12000000,
+    "trader_claimable": 0,
+    "treasury": 500000,
+    "trader_bond": 39500000,
+    "trader_locked": 0,
+    "lost": 1,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p10_confirmed_taker_wins_norev",
+   "protect": 10,
+   "silent": false,
+   "steps": [
+    [
+     "r",
+     "TAKER_WINS",
+     false
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "TAKER_WINS",
+    "compensation": 10000000,
+    "fee": 500000,
+    "taker_claimable": 12000000,
+    "trader_claimable": 0,
+    "treasury": 500000,
+    "trader_bond": 39500000,
+    "trader_locked": 0,
+    "lost": 1,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p10_confirmed_split_rev",
+   "protect": 10,
+   "silent": false,
+   "steps": [
+    [
+     "r",
+     "SPLIT",
+     true
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "SPLIT",
+    "compensation": 5000000,
+    "fee": 250000,
+    "taker_claimable": 7000000,
+    "trader_claimable": 0,
+    "treasury": 250000,
+    "trader_bond": 44750000,
+    "trader_locked": 0,
+    "lost": 0,
+    "split": 1,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p10_confirmed_split_norev",
+   "protect": 10,
+   "silent": false,
+   "steps": [
+    [
+     "r",
+     "SPLIT",
+     false
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "SPLIT",
+    "compensation": 5000000,
+    "fee": 250000,
+    "taker_claimable": 7000000,
+    "trader_claimable": 0,
+    "treasury": 250000,
+    "trader_bond": 44750000,
+    "trader_locked": 0,
+    "lost": 0,
+    "split": 1,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p10_confirmed_trader_wins_rev",
+   "protect": 10,
+   "silent": false,
+   "steps": [
+    [
+     "r",
+     "TRADER_WINS",
+     true
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "TRADER_WINS",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 0,
+    "trader_claimable": 2000000,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 0,
+    "lost": 0,
+    "split": 0,
+    "won": 1,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p10_confirmed_trader_wins_norev",
+   "protect": 10,
+   "silent": false,
+   "steps": [
+    [
+     "r",
+     "TRADER_WINS",
+     false
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "TRADER_WINS",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 0,
+    "trader_claimable": 2000000,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 0,
+    "lost": 0,
+    "split": 0,
+    "won": 1,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p10_confirmed_insufficient_evidence_norev",
+   "protect": 10,
+   "silent": false,
+   "steps": [
+    [
+     "r",
+     "INSUFFICIENT_EVIDENCE",
+     false
+    ]
+   ],
+   "expect": {
+    "status": "REOPENED",
+    "verdict": "INSUFFICIENT_EVIDENCE",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 0,
+    "trader_claimable": 0,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 15000000,
+    "lost": 0,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p10_confirmed_insufficient_evidence_rev",
+   "protect": 10,
+   "silent": false,
+   "steps": [
+    [
+     "r",
+     "INSUFFICIENT_EVIDENCE",
+     true
+    ]
+   ],
+   "expect": {
+    "status": "REOPENED",
+    "verdict": "INSUFFICIENT_EVIDENCE",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 0,
+    "trader_claimable": 0,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 15000000,
+    "lost": 0,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p10_confirmed_insufficient_evidence_norev_then_taker_wins_rev",
+   "protect": 10,
+   "silent": false,
+   "steps": [
+    [
+     "r",
+     "INSUFFICIENT_EVIDENCE",
+     false
+    ],
+    [
+     "r",
+     "TAKER_WINS",
+     true
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "TAKER_WINS",
+    "compensation": 10000000,
+    "fee": 500000,
+    "taker_claimable": 12000000,
+    "trader_claimable": 0,
+    "treasury": 500000,
+    "trader_bond": 39500000,
+    "trader_locked": 0,
+    "lost": 1,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p10_confirmed_insufficient_evidence_norev_then_split_rev",
+   "protect": 10,
+   "silent": false,
+   "steps": [
+    [
+     "r",
+     "INSUFFICIENT_EVIDENCE",
+     false
+    ],
+    [
+     "r",
+     "SPLIT",
+     true
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "SPLIT",
+    "compensation": 5000000,
+    "fee": 250000,
+    "taker_claimable": 7000000,
+    "trader_claimable": 0,
+    "treasury": 250000,
+    "trader_bond": 44750000,
+    "trader_locked": 0,
+    "lost": 0,
+    "split": 1,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p10_confirmed_insufficient_evidence_norev_then_trader_wins_norev",
+   "protect": 10,
+   "silent": false,
+   "steps": [
+    [
+     "r",
+     "INSUFFICIENT_EVIDENCE",
+     false
+    ],
+    [
+     "r",
+     "TRADER_WINS",
+     false
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "TRADER_WINS",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 0,
+    "trader_claimable": 2000000,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 0,
+    "lost": 0,
+    "split": 0,
+    "won": 1,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p10_confirmed_insufficient_evidence_norev_then_insufficient_evidence_norev",
+   "protect": 10,
+   "silent": false,
+   "steps": [
+    [
+     "r",
+     "INSUFFICIENT_EVIDENCE",
+     false
+    ],
+    [
+     "r",
+     "INSUFFICIENT_EVIDENCE",
+     false
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "INSUFFICIENT_EVIDENCE",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 2000000,
+    "trader_claimable": 0,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 0,
+    "lost": 0,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 1
+   }
+  },
+  {
+   "id": "p10_silent_taker_wins_rev",
+   "protect": 10,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "TAKER_WINS",
+     true
+    ]
+   ],
+   "expect": {
+    "status": "PAYOUT_PENDING",
+    "verdict": "TAKER_WINS",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 0,
+    "trader_claimable": 0,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 15000000,
+    "lost": 0,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p10_silent_taker_wins_norev",
+   "protect": 10,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "TAKER_WINS",
+     false
+    ]
+   ],
+   "divergent": true,
+   "expect_genlayer": {
+    "status": "REOPENED",
+    "verdict": "INSUFFICIENT_EVIDENCE",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 0,
+    "trader_claimable": 0,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 15000000,
+    "lost": 0,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 0
+   },
+   "expect_base": {
+    "status": "DISPUTED",
+    "verdict": "",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 0,
+    "trader_claimable": 0,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 15000000,
+    "lost": 0,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 0
+   },
+   "base_reverts": true
+  },
+  {
+   "id": "p10_silent_split_rev",
+   "protect": 10,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "SPLIT",
+     true
+    ]
+   ],
+   "expect": {
+    "status": "PAYOUT_PENDING",
+    "verdict": "SPLIT",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 0,
+    "trader_claimable": 0,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 15000000,
+    "lost": 0,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p10_silent_split_norev",
+   "protect": 10,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "SPLIT",
+     false
+    ]
+   ],
+   "divergent": true,
+   "expect_genlayer": {
+    "status": "REOPENED",
+    "verdict": "INSUFFICIENT_EVIDENCE",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 0,
+    "trader_claimable": 0,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 15000000,
+    "lost": 0,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 0
+   },
+   "expect_base": {
+    "status": "DISPUTED",
+    "verdict": "",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 0,
+    "trader_claimable": 0,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 15000000,
+    "lost": 0,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 0
+   },
+   "base_reverts": true
+  },
+  {
+   "id": "p10_silent_trader_wins_rev",
+   "protect": 10,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "TRADER_WINS",
+     true
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "TRADER_WINS",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 0,
+    "trader_claimable": 2000000,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 0,
+    "lost": 0,
+    "split": 0,
+    "won": 1,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p10_silent_trader_wins_norev",
+   "protect": 10,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "TRADER_WINS",
+     false
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "TRADER_WINS",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 0,
+    "trader_claimable": 2000000,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 0,
+    "lost": 0,
+    "split": 0,
+    "won": 1,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p10_silent_insufficient_evidence_norev",
+   "protect": 10,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "INSUFFICIENT_EVIDENCE",
+     false
+    ]
+   ],
+   "expect": {
+    "status": "REOPENED",
+    "verdict": "INSUFFICIENT_EVIDENCE",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 0,
+    "trader_claimable": 0,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 15000000,
+    "lost": 0,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p10_silent_insufficient_evidence_rev",
+   "protect": 10,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "INSUFFICIENT_EVIDENCE",
+     true
+    ]
+   ],
+   "expect": {
+    "status": "REOPENED",
+    "verdict": "INSUFFICIENT_EVIDENCE",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 0,
+    "trader_claimable": 0,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 15000000,
+    "lost": 0,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p10_silent_insufficient_evidence_norev_then_taker_wins_rev",
+   "protect": 10,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "INSUFFICIENT_EVIDENCE",
+     false
+    ],
+    [
+     "r",
+     "TAKER_WINS",
+     true
+    ]
+   ],
+   "expect": {
+    "status": "PAYOUT_PENDING",
+    "verdict": "TAKER_WINS",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 0,
+    "trader_claimable": 0,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 15000000,
+    "lost": 0,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p10_silent_insufficient_evidence_norev_then_split_rev",
+   "protect": 10,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "INSUFFICIENT_EVIDENCE",
+     false
+    ],
+    [
+     "r",
+     "SPLIT",
+     true
+    ]
+   ],
+   "expect": {
+    "status": "PAYOUT_PENDING",
+    "verdict": "SPLIT",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 0,
+    "trader_claimable": 0,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 15000000,
+    "lost": 0,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p10_silent_insufficient_evidence_norev_then_trader_wins_norev",
+   "protect": 10,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "INSUFFICIENT_EVIDENCE",
+     false
+    ],
+    [
+     "r",
+     "TRADER_WINS",
+     false
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "TRADER_WINS",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 0,
+    "trader_claimable": 2000000,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 0,
+    "lost": 0,
+    "split": 0,
+    "won": 1,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p10_silent_insufficient_evidence_norev_then_insufficient_evidence_norev",
+   "protect": 10,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "INSUFFICIENT_EVIDENCE",
+     false
+    ],
+    [
+     "r",
+     "INSUFFICIENT_EVIDENCE",
+     false
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "INSUFFICIENT_EVIDENCE",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 2000000,
+    "trader_claimable": 0,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 0,
+    "lost": 0,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 1
+   }
+  },
+  {
+   "id": "p10_silent_taker_wins_rev_then_finalize",
+   "protect": 10,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "TAKER_WINS",
+     true
+    ],
+    [
+     "f"
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "TAKER_WINS",
+    "compensation": 2500000,
+    "fee": 125000,
+    "taker_claimable": 4500000,
+    "trader_claimable": 0,
+    "treasury": 125000,
+    "trader_bond": 47375000,
+    "trader_locked": 0,
+    "lost": 1,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p10_silent_taker_wins_rev_then_challenge_then_trader_wins_norev",
+   "protect": 10,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "TAKER_WINS",
+     true
+    ],
+    [
+     "c"
+    ],
+    [
+     "r",
+     "TRADER_WINS",
+     false
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "TRADER_WINS",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 0,
+    "trader_claimable": 2000000,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 0,
+    "lost": 0,
+    "split": 0,
+    "won": 1,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p10_silent_taker_wins_rev_then_challenge_then_taker_wins_rev",
+   "protect": 10,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "TAKER_WINS",
+     true
+    ],
+    [
+     "c"
+    ],
+    [
+     "r",
+     "TAKER_WINS",
+     true
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "TAKER_WINS",
+    "compensation": 2500000,
+    "fee": 125000,
+    "taker_claimable": 4500000,
+    "trader_claimable": 0,
+    "treasury": 125000,
+    "trader_bond": 47375000,
+    "trader_locked": 0,
+    "lost": 1,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p10_silent_taker_wins_rev_then_challenge_then_insufficient_evidence_norev",
+   "protect": 10,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "TAKER_WINS",
+     true
+    ],
+    [
+     "c"
+    ],
+    [
+     "r",
+     "INSUFFICIENT_EVIDENCE",
+     false
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "INSUFFICIENT_EVIDENCE",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 2000000,
+    "trader_claimable": 0,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 0,
+    "lost": 0,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 1
+   }
+  },
+  {
+   "id": "p10_silent_insufficient_evidence_norev_then_taker_wins_rev_then_finalize",
+   "protect": 10,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "INSUFFICIENT_EVIDENCE",
+     false
+    ],
+    [
+     "r",
+     "TAKER_WINS",
+     true
+    ],
+    [
+     "f"
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "TAKER_WINS",
+    "compensation": 2500000,
+    "fee": 125000,
+    "taker_claimable": 4500000,
+    "trader_claimable": 0,
+    "treasury": 125000,
+    "trader_bond": 47375000,
+    "trader_locked": 0,
+    "lost": 1,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p10_silent_insufficient_evidence_norev_then_taker_wins_rev_then_challenge_then_taker_wins_rev",
+   "protect": 10,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "INSUFFICIENT_EVIDENCE",
+     false
+    ],
+    [
+     "r",
+     "TAKER_WINS",
+     true
+    ],
+    [
+     "c"
+    ],
+    [
+     "r",
+     "TAKER_WINS",
+     true
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "TAKER_WINS",
+    "compensation": 2500000,
+    "fee": 125000,
+    "taker_claimable": 4500000,
+    "trader_claimable": 0,
+    "treasury": 125000,
+    "trader_bond": 47375000,
+    "trader_locked": 0,
+    "lost": 1,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p10_silent_split_rev_then_finalize",
+   "protect": 10,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "SPLIT",
+     true
+    ],
+    [
+     "f"
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "SPLIT",
+    "compensation": 2500000,
+    "fee": 125000,
+    "taker_claimable": 4500000,
+    "trader_claimable": 0,
+    "treasury": 125000,
+    "trader_bond": 47375000,
+    "trader_locked": 0,
+    "lost": 0,
+    "split": 1,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p10_silent_split_rev_then_challenge_then_trader_wins_norev",
+   "protect": 10,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "SPLIT",
+     true
+    ],
+    [
+     "c"
+    ],
+    [
+     "r",
+     "TRADER_WINS",
+     false
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "TRADER_WINS",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 0,
+    "trader_claimable": 2000000,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 0,
+    "lost": 0,
+    "split": 0,
+    "won": 1,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p10_silent_split_rev_then_challenge_then_split_rev",
+   "protect": 10,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "SPLIT",
+     true
+    ],
+    [
+     "c"
+    ],
+    [
+     "r",
+     "SPLIT",
+     true
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "SPLIT",
+    "compensation": 2500000,
+    "fee": 125000,
+    "taker_claimable": 4500000,
+    "trader_claimable": 0,
+    "treasury": 125000,
+    "trader_bond": 47375000,
+    "trader_locked": 0,
+    "lost": 0,
+    "split": 1,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p10_silent_split_rev_then_challenge_then_insufficient_evidence_norev",
+   "protect": 10,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "SPLIT",
+     true
+    ],
+    [
+     "c"
+    ],
+    [
+     "r",
+     "INSUFFICIENT_EVIDENCE",
+     false
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "INSUFFICIENT_EVIDENCE",
+    "compensation": 0,
+    "fee": 0,
+    "taker_claimable": 2000000,
+    "trader_claimable": 0,
+    "treasury": 0,
+    "trader_bond": 50000000,
+    "trader_locked": 0,
+    "lost": 0,
+    "split": 0,
+    "won": 0,
+    "inconclusive": 1
+   }
+  },
+  {
+   "id": "p10_silent_insufficient_evidence_norev_then_split_rev_then_finalize",
+   "protect": 10,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "INSUFFICIENT_EVIDENCE",
+     false
+    ],
+    [
+     "r",
+     "SPLIT",
+     true
+    ],
+    [
+     "f"
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "SPLIT",
+    "compensation": 2500000,
+    "fee": 125000,
+    "taker_claimable": 4500000,
+    "trader_claimable": 0,
+    "treasury": 125000,
+    "trader_bond": 47375000,
+    "trader_locked": 0,
+    "lost": 0,
+    "split": 1,
+    "won": 0,
+    "inconclusive": 0
+   }
+  },
+  {
+   "id": "p10_silent_insufficient_evidence_norev_then_split_rev_then_challenge_then_split_rev",
+   "protect": 10,
+   "silent": true,
+   "steps": [
+    [
+     "r",
+     "INSUFFICIENT_EVIDENCE",
+     false
+    ],
+    [
+     "r",
+     "SPLIT",
+     true
+    ],
+    [
+     "c"
+    ],
+    [
+     "r",
+     "SPLIT",
+     true
+    ]
+   ],
+   "expect": {
+    "status": "RESOLVED",
+    "verdict": "SPLIT",
+    "compensation": 2500000,
+    "fee": 125000,
+    "taker_claimable": 4500000,
+    "trader_claimable": 0,
+    "treasury": 125000,
+    "trader_bond": 47375000,
+    "trader_locked": 0,
+    "lost": 0,
+    "split": 1,
+    "won": 0,
+    "inconclusive": 0
+   }
+  }
+ ]
+}
