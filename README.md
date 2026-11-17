@@ -16,6 +16,12 @@ A taker pays the trader in fiat off-chain, the way P2P trades already work. The 
 - `frontend/.well-known/farcaster.json` - mini app manifest template (placeholders to fill)
 - `ARCHITECTURE.md` - state machine, economics, limits
 
+## Live testnet deployment
+
+- Contract: `0x98aeDc63eAe498256Aa863417754AF67D419cf3C` (GenLayer Studio)
+- Explorer: https://explorer-studio.genlayer.com/address/0x98aeDc63eAe498256Aa863417754AF67D419cf3C
+- Frontend: https://123cryp.github.io/PledgeDesk/
+
 ## Run the tests
 
     python3 -m unittest discover -s tests -t tests
@@ -33,7 +39,7 @@ Same trade flow, with ETH bonds. Differences from the GenLayer version:
 - Trades bound by trader silence cap compensation at 25%, need the arbiter's `paymentEvidenceReviewed` flag, and pay out only after a 7-day window in which the trader can challenge. Claiming a payment needs a refundable deposit (see ARCHITECTURE.md).
 - Invalid input reverts normally (ETH is returned by the EVM), so no refund-instead-of-revert path.
 - Constants are scaled to ETH (min bond 0.005, protect cap 0.002 / 0.01 / 0.04, dispute deposit 0.001). Constructor takes `(arbiter, timeUnit)`; use 3600 for real windows, 5 for fast tests.
-- The Solidity code was adapted from a tested sibling project by renaming; it has not been compiled or run yet, has not been deployed to a live chain and has not been audited. Run the Foundry tests first (`cd base && forge test`).
+- The Solidity code compiles and its Foundry tests pass in CI (`cd base && forge test`). It has not been deployed to a live chain and has not been audited.
 - The arbiter should be a multisig contract; the deploy script refuses an EOA unless `ALLOW_EOA_ARBITER=true` (testnet only). Arbiter changes are timelocked 7 days (`proposeArbiter`, `applyArbiterChange`).
 - Deploy: `cd base && ARBITER=0x... forge script script/Deploy.s.sol --rpc-url https://sepolia.base.org --account <keystore> --broadcast`, then open `frontend/base.html?c=<address>&n=sepolia`.
 - Mini app: host `frontend/` over https, replace `APP_URL` in `base.html` and `.well-known/farcaster.json`, and sign the account association with Base Build. The mini app is untested.
@@ -45,6 +51,6 @@ Same trade flow, with ETH bonds. Differences from the GenLayer version:
 - Validators are language models and can be wrong. No appeal in v1.
 - Compensation is in GEN and covers the protected amount, not necessarily the value of the crypto.
 - Links are never opened. When the trader stays silent, a text-only payment claim is expected to be rejected as insufficient, so the taker gets the deposits back but no compensation.
-- The offline test suite passes (65 tests). The GenLayer contract has not been deployed on Studio yet, so the live behaviour of the AI judge is untested.
+- The offline test suite passes (65 tests) and the Foundry tests pass in CI. On Studio, one full trade and one disputed trade (taker wins) have been run end to end; other paths such as cancel, expiry and trader-wins verdicts are covered only by the offline tests.
 
 MIT licensed.
