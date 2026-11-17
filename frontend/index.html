@@ -406,7 +406,7 @@ function feedItems(trades) {
   for (const d of trades) {
     if (d.created_at) ev.push([d.created_at, `Offer created: <b class="word">${esc(d.asset)}</b>`, d.trade_id]);
     if (d.dispute_opened_at) ev.push([d.dispute_opened_at, `Dispute opened on <b class="word">${esc(d.asset)}</b>`, d.trade_id]);
-    if (d.resolved_at) ev.push([d.resolved_at, `${esc(String(d.outcome || d.status).replace(/_/g, " ").toLowerCase())}: <b class="word">${esc(d.asset)}</b>`, d.trade_id]);
+    if (d.resolved_at) ev.push([d.resolved_at, `${esc(((s) => s.charAt(0).toUpperCase() + s.slice(1))(String(d.outcome || d.status).replace(/_/g, " ").toLowerCase()))}: <b class="word">${esc(d.asset)}</b>`, d.trade_id]);
   }
   ev.sort((a, b) => b[0] - a[0]);
   return ev.slice(0, 8);
